@@ -236,12 +236,6 @@
     width: 100%;
     height: 100%;
     margin-bottom: var(--big-space);
-
-body {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 200%;
 }
 
 .main-box{
@@ -250,14 +244,41 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../images/background_img.png") no-repeat;
+  background: url("../images/_background_img.png") no-repeat;
   background-size: auto;
 }
 
-nav{
+#main{
+  display:block;
+}
+
+#qa{
+  display:none;
+}
+
+
+
+/*  */
+/* test page */
+/*  */
+.test-container {
+  background-image: url("../images/_background_img.png");
+  background-repeat: repeat-y;
+  background-size: cover;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+nav{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color : rgba(255, 255, 255, 0.45);
 }
 
 nav img {
@@ -266,12 +287,13 @@ nav img {
 
 nav .title{
   width: 70%;
+  padding-top: 1%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav .title .page-number{
+nav .title .subBox{
   display: flex;
   justify-content: flex-end;
   width: 150px;
@@ -294,13 +316,21 @@ nav .title .page-number{
   background: #FF931E;
 }
 
-main{
+.test_body{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-main .box{
+.test_body .ansBox{
+  display: flex;
+  width:100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.test_body .box{
   width: 80%;
   display: flex;
   justify-content: center;
@@ -310,19 +340,18 @@ main .box{
   text-align: center;
   font-size: 50px;
   font-weight: bold;
-  border-radius: 60px;
+  border-radius: 70px;
   background-color: white;
 }
 
-main #question{
-  min-height: 300px;
-  box-shadow: 7px 7px 5px 1px #aaaaaa;
-  opacity: 90%;
+.test_body #question{
+  min-height: 400px;
+  box-shadow: 7px 10px 8px rgba(0, 0, 0, 0.25);
 }
 
-main #answer{
-  min-height: 200px;
+.test_body #answer{
+  min-height: 250px;
   border : 7px solid #0071F5;
-  box-shadow: 7px 7px 5px 1px #828282;
+  box-shadow: 12px 16px 8px rgba(172, 189, 210, 0.56);
   opacity: 70%;
 }
