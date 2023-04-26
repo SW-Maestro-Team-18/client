@@ -95,27 +95,27 @@
     align-items: center;
 }
 
-.share {
+.share-button {
     flex-direction: column;
 }
 
-.share .header,
-.share .count {
+.share-button .header,
+.share-button .count {
     display: flex;
     align-items: center;
 }
 
-.share .header img,
-.share .count img {
+.share-button .header img,
+.share-button .count img {
     max-width: var(--small-space);
     max-height: var(--small-space);
 }
 
-.share .header img {
+.share-button .header img {
     margin-left: 0.25rem;
 }
 
-.share .count img {
+.share-button .count img {
     margin-right: 0.25rem;
 }
 
