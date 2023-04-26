@@ -1,1 +1,36 @@
-<h1>index 페이지</h1>
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>sw maestro mbti - test page</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+    
+        <div class="main-box">
+          <!-- 메인 페이지 -->
+          <section id="main">
+            <button onclick="js:startQA()">시작</button>
+          </section>
+          
+          <!-- 질문 & 응답 페이지 -->
+          <section id="qa">
+            <nav class="nav">
+              <div class="title">
+                <div class="subBox"></div>
+                <img src="./images/quest_sml_logo.png" width="320px" height="120px"/>
+                <div class="subBox" id="page-number"></div>
+              </div>
+            </nav>
+            <main role=”main”>
+              <progress id="progress" value="0" min="0" max="100"></progress>
+              <div class="box" id="question"></div>
+              <div class="ansBox"></div>
+            </main>
+          </section>
+        </div>
+      </body>
+      <script src="./js/data.js" charset="utf-8"></script>
+      <script src="./js/test.js" charset="utf-8"></script>
+</html>
