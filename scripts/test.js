@@ -3,6 +3,8 @@ const qa = document.querySelector("#qa");
 const result = document.querySelector("#result");
 const qNum = 10;
 
+let ansList = [];
+
 function startQA() {
   main.style.display = "none";
   qa.style.display = "block";
@@ -14,14 +16,14 @@ function nextQA(idx) {
   if (idx == qNum + 1) {
     qa.style.display = "none";
     result.style.display = "block";
+    console.log(ansList);
   }
 
   let q = document.querySelector("#question");
   q.innerHTML = QAList[idx].q;
-  console.log(QAList[idx].a);
 
   for (let i in QAList[idx].a) {
-    getAns(QAList[idx].a[i], idx);
+    getAns(QAList[idx].a[i], idx, i);
   }
   let progress = document.querySelector("#progress");
   progress.value = (100 / qNum) * idx;
@@ -30,7 +32,7 @@ function nextQA(idx) {
   pageNum.innerHTML = idx + "/" + qNum;
 }
 
-function getAns(data, idx) {
+function getAns(data, idx, i) {
   let a = document.querySelector(".ansBox");
   let ans = document.createElement("button");
   ans.innerHTML = data;
@@ -40,8 +42,11 @@ function getAns(data, idx) {
 
   ans.addEventListener(
     "click",
-    function () {
+    function (e) {
       var children = document.querySelectorAll("#answer");
+
+      // 몇번째 답을 선택했는지 저장
+      ansList[idx - 1] = i;
 
       for (let i = 0; i < children.length; i++) {
         children[i].disabled = true;
