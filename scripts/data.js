@@ -1,5 +1,5 @@
-// const url = `${window.location.protocol}//${window.location.host}`;
-export const url = "http://127.0.0.1:8000";
+export const url = `${window.location.protocol}//${window.location.host}`;
+// export const url = "http://127.0.0.1:8000";
 
 export const QAList = [
   {},
@@ -66,15 +66,7 @@ export const QAList = [
       "신나는 (힙합 || edm || pop)",
       "조용한게 최고! 아무것도 듣지 않는다.",
     ],
-  },
-  {
-    q: "개발하면서 듣기 좋은 음악은?",
-    a: [
-      "조용한 (lofi || jazz) 분위기의 bgm",
-      "신나는 (힙합 || edm || pop)",
-      "조용한게 최고! 아무것도 듣지 않는다.",
-    ],
-  },
+  }
 ];
 
 export let types = await fetch(`${url}/mbti`).then(response => response.json());

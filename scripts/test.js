@@ -4,7 +4,7 @@ import { setResult } from "./result.js";
 const main = document.querySelector("#main");
 const qa = document.querySelector("#qa");
 const result = document.querySelector("#result");
-const qNum = 10;
+const qNum = 9;
 
 let ansList = [];
 
