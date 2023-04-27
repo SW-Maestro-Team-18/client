@@ -1,4 +1,7 @@
-const QAList = [
+// const url = `${window.location.protocol}//${window.location.host}`;
+export const url = "http://127.0.0.1:8000";
+
+export const QAList = [
   {},
   {
     q: "최고의 연수생과 함께 한팀이 되고 싶다. 내가 원하는 팀원의 모습은?",
@@ -73,3 +76,5 @@ const QAList = [
     ],
   },
 ];
+
+export let types = await fetch(`${url}/mbti`).then(response => response.json());

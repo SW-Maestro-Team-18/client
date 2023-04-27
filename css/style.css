@@ -36,7 +36,7 @@
 .main-container {
     background-image: url("../images/_background_img_main.png");
     background-repeat: repeat-y;
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
@@ -72,6 +72,7 @@
     background-color: var(--c-accent);
     color: var(--c-background);
     border-radius: 130px;
+    cursor: pointer;
 }
 
 .users {
@@ -97,6 +98,7 @@
 
 .share-button {
     flex-direction: column;
+    cursor: pointer;
 }
 
 .share-button .header,
@@ -164,15 +166,25 @@
     margin-bottom: var(--small-space);
 }
 
-.comments .comment {
+.comments .comments-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+
+.comments .comment,
+.comments .input {
     width: 100%;
     display: flex;
 }
 
-.comments .comment .image {
-    width: calc(var(--big-space) * 2.5);
-    height: calc(var(--big-space) * 2.5);
-    margin-right: var(--small-space);
+.comments .comment .image,
+.comments .input .image {
+    flex-shrink: 0;
+    max-width: calc(var(--big-space) * 2.5);
+    max-height: calc(var(--big-space) * 2.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,18 +192,20 @@
     overflow: hidden;
 }
 
-.comments .comment .image img {
-    display: block;
+.comments .comment .image img,
+.comments .input .image img {
     width: 200%;
 }
 
-.comments .comment .content {
+.comments .comment .content,
+.comments .input .content {
+    margin-left: var(--small-space);
     display: flex;
     flex-direction: column;
 }
 
-.comments .comment .content .input {
-    color: var(--c-separator);
+.comments .input .content input {
+    color: var(--c-foreground);
     padding-bottom: 0.25rem;
     background: transparent;
     outline: none;
@@ -199,11 +213,11 @@
     border-bottom: 3px solid var(--c-separator);
 }
 
-.comments .comment .content .input::placeholder {
+.comments .input .content input::placeholder {
     color: var(--c-separator);
 }
 
-.comments .comment .content .submit-button {
+.comments .input .content .submit-button {
     width: 50%;
     height: var(--big-space);
     margin-top: var(--small-space);
@@ -211,6 +225,7 @@
     background-color: var(--c-accent);
     color: var(--c-background);
     border-radius: 130px;
+    cursor: pointer;
 }
 
 .comments .separator {

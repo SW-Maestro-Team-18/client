@@ -11,7 +11,7 @@
       <section id="main">
         <div class="main-container">
           <img class="main-logo" alt="로고" src="./images/_main_big_logo.png" />
-          <button onclick="js:startQA()" class="container start-button">
+          <button class="container start-button">
               시작하기
           </button>
           <div class="users">
@@ -21,7 +21,7 @@
                   <h1>123</h1>
               </div>
           </div>
-          <button class="container share">
+          <button class="container share-button">
               <div class="header">
                   <span>공유하기</span>
                   <img alt="공유 이미지" src="./images/_main_share_url.png" />
@@ -48,17 +48,7 @@
           </div>
           <div class="container comments" id="comments">
               <span class="title">커뮤니티</span>
-              <div class="comment">
-                  <div class="image">
-                      <img alt="유형 이미지" src="./images/_result_chr_1.png" />
-                  </div>
-                  <div class="content">
-                      <strong class="small-font">Placeholder</strong>
-                      <span class="smaller-font">2023-04-19 14:12:57</span>
-                      <span class="small-font">저랑 정말 똑같네요a sdf asdfasf as dfa sdf asdfasdfasdf</span>
-                  </div>
-              </div>
-              <div class="separator"></div>
+              <div class="comments-container"></div>
           </div>
         </div>
       </section>
@@ -69,7 +59,7 @@
           <nav class="nav">
             <div class="title">
               <div class="subBox"></div>
-              <img src="./images/quest_sml_logo.png" width="320px" height="120px"/>
+              <img src="./images/_quest_sml_logo.png" width="320px" height="120px"/>
               <div class="subBox" id="page-number"></div>
             </div>
           </nav>
@@ -84,11 +74,13 @@
       <!-- 결과 페이지 -->
       <section id="result">
         <div class="main-container">
-          <img class="small-logo" alt="로고" src="../images/_quest_sml_logo.png" />
+          <a href="./index.html">
+              <img class="small-logo" alt="로고" src="./images/_quest_sml_logo.png" />
+          </a>
           <div class="container type-name">
               <h1>Placeholder</h1>
           </div>
-          <img class="type-image" alt="유형 이미지" src="../images/_result_chr_1.png" />
+          <img class="type-image" alt="유형 이미지" src="./images/_result_chr_1.png" />
           <div class="container bio">
               <span>소마 센터는 내가 지킨다!</span>
           </div>
@@ -98,32 +90,22 @@
           <button class="container share-button">
               <div class="header">
                   <span>공유하기</span>
-                  <img alt="공유 이미지" src="../images/_main_share_url.png" />
+                  <img alt="공유 이미지" src="./images/_main_share_url.png" />
               </div>
               <div class="count">
-                  <img alt="공유 이미지" src="../images/_main_share_num.png" />
+                  <img alt="공유 이미지" src="./images/_main_share_num.png" />
                   <span class="small-font">1234</span>
               </div>
           </button>
           <div class="container comments" id="type-comments">
               <span class="title">커뮤니티</span>
-              <div class="comment">
+              <div class="comments-container"></div>
+              <div class="input">
                   <div class="image">
-                      <img alt="유형 이미지" src="../images/_result_chr_1.png" />
+                      <img alt="유형 이미지" src="./images/_result_chr_1.png" />
                   </div>
                   <div class="content">
-                      <strong class="small-font">Placeholder</strong>
-                      <span class="smaller-font">2023-04-19 14:12:57</span>
-                      <span class="small-font">저랑 정말 똑같네요a sdf asdfasf as dfa sdf asdfasdfasdf</span>
-                  </div>
-              </div>
-              <div class="separator"></div>
-              <div class="comment">
-                  <div class="image">
-                      <img alt="유형 이미지" src="../images/_result_chr_1.png" />
-                  </div>
-                  <div class="content">
-                      <input type="text" class="input" placeholder="댓글 추가..." />
+                      <input type="text" placeholder="댓글 추가..." />
                       <button class="container submit-button">
                           <span class="small-font">달기</span>
                       </button>
@@ -133,7 +115,7 @@
       </div>
       </section>
     </body>
-    <script src="./scripts/data.js" charset="utf-8"></script>
-    <script src="./scripts/test.js" charset="utf-8"></script>
-    <script src="./scripts/main.js" charset="utf-8"></script>
+    <script type="module" src="./scripts/data.js" charset="utf-8"></script>
+    <script type="module" src="./scripts/test.js" charset="utf-8"></script>
+    <script type="module" src="./scripts/main.js" charset="utf-8"></script>
 </html>

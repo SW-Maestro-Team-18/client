@@ -1,3 +1,6 @@
+import { QAList } from "./data.js";
+import { setResult } from "./result.js";
+
 const main = document.querySelector("#main");
 const qa = document.querySelector("#qa");
 const result = document.querySelector("#result");
@@ -5,7 +8,7 @@ const qNum = 10;
 
 let ansList = [];
 
-function startQA() {
+export function startQA() {
   main.style.display = "none";
   qa.style.display = "block";
   nextQA(1);
@@ -17,19 +20,21 @@ function nextQA(idx) {
     qa.style.display = "none";
     result.style.display = "block";
     console.log(ansList);
+    setResult(ansList);
   }
+  else {
+    let q = document.querySelector("#question");
+    q.innerHTML = QAList[idx].q;
 
-  let q = document.querySelector("#question");
-  q.innerHTML = QAList[idx].q;
+    for (let i in QAList[idx].a) {
+      getAns(QAList[idx].a[i], idx, i);
+    }
+    let progress = document.querySelector("#progress");
+    progress.value = (100 / qNum) * idx;
 
-  for (let i in QAList[idx].a) {
-    getAns(QAList[idx].a[i], idx, i);
+    let pageNum = document.querySelector("#page-number");
+    pageNum.innerHTML = idx + "/" + qNum;
   }
-  let progress = document.querySelector("#progress");
-  progress.value = (100 / qNum) * idx;
-
-  let pageNum = document.querySelector("#page-number");
-  pageNum.innerHTML = idx + "/" + qNum;
 }
 
 function getAns(data, idx, i) {
