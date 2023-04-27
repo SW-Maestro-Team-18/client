@@ -3,6 +3,43 @@ import { url } from "./data.js";
 let typeName = "";
 let id = -1;
 
+const share = document.querySelector("#result > .main-container > .share-button");
+share.addEventListener("click", async () => {
+    let data = {
+        title: "쏨BTI",
+        text: `내 소마 개발자 유형은 ${typeName}?!`,
+        url: window.location.href
+    };
+
+    if (typeof navigator.share !== "undefined" && navigator.canShare)
+    {
+        navigator.share(data)
+            .then(() => {
+                let fetchData = {
+                    method: "PUT",
+                    body: JSON.stringify({
+                        type_id: id
+                    }),
+                    headers: new Headers({
+                        "Content-Type": "application/json"
+                    })
+                };
+        
+                fetch(`${url}/share`, fetchData)
+                    .then(() => {
+                        const shareCount = document.querySelector("#result > .main-container > .share-button > .count > span");
+
+                        shareCount.innerHTML = parseInt(shareCount.innerHTML) + 1;
+                    });
+            });
+    }
+    else
+    {
+        await navigator.clipboard.writeText(`${data.title} - ${data.text} ${data.url}`);
+        alert("URL이 복사됐습니다!");
+    }
+});
+
 const submit = document.querySelector(".submit-button");
 submit.addEventListener("click", () => {
     const input = document.querySelector("#result > .main-container > .comments > .input > .content > input");
@@ -92,7 +129,7 @@ export function addComment(position, id, typeName, dateTime, text)
 
     let date = document.createElement("span");
     date.className = "smaller-font";
-    date.innerHTML = dateTime;
+    date.innerHTML = dateTime.split("T").join(" ");
     content.appendChild(date);
 
     let innerText = document.createElement("span");
